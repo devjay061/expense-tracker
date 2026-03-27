@@ -136,7 +136,4 @@ if not budgets_file_exists:
         writer = csv.writer(file)
         writer.writerow(['Category', 'Budget'])
 
-#
-#main()
-#set_budget()
-check_budget()
+main()
