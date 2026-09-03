@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Welcome, {{email}} </h2>
+
+
+<h3>Summary by Category</h3>
+<ul>
+{% for category, total in summary.items() %}
+  <li>
+    {{category}} : ${{ "%0.2f" | format(total) }}
+    {% if category in budgets %}
+    / ${{ "%0.2f" | format(budgets[category]) }}
+        {% if total > budgets[category] %}
+            <span style="color: red;">(Over budget)</span>
+        {% else %}
+            <span style="color: green;">(Within budget)</span>
+        {% endif %}
+    {% else %}
+        <span style="color: gray;">(No budget set)</span>
+    {% endif %}
+
+  </li>
+{% endfor %}
+</ul>   
+
+<h3>All Expenses</h3>
+<ul>
+    
+{% for expense in expenses %}
+  <li>
+    {{ expense['date'] }} - {{ expense['category'] }} - ₹{{ expense['amount'] }}
+  </li>
+{% endfor %}
+</ul>
+
+{% endblock %}

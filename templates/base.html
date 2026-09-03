@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Expense Tracker</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        
+    </head>
+    <body>
+        {% if session_email %}
+        <nav>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/add_expense">Add Expense</a>
+            <a href="/set-budget">Set Budget</a>
+            <a href="/logout">Log Out ({{ session_email }})</a>
+
+        </nav>
+        {% endif %}
+
+        {% block content %}{% endblock %}
+    </body>
+
+</html>

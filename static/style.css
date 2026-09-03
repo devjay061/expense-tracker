@@ -1,0 +1,129 @@
+:root {
+  --paper: #F6F8F1;
+  --stripe: #E1ECD9;
+  --ink: #1E2A20;
+  --ink-light: #4B5A4C;
+  --accent: #2F6B3C;
+  --alert: #A63A2E;
+  --line: #C7D3BF;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.topbar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 20px 32px;
+  border-bottom: 2px dashed var(--line);
+}
+
+.wordmark {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+
+.topbar nav { display: flex; gap: 22px; }
+
+.topbar nav a {
+  color: var(--ink-light);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.topbar nav a:hover { color: var(--accent); }
+
+.page {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+h2 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  font-size: 26px;
+  margin: 0 0 28px;
+}
+
+h3 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--ink-light);
+  margin: 36px 0 10px;
+  padding-bottom: 8px;
+  border-bottom: 2px dashed var(--line);
+}
+
+/* Ledger rows */
+ul { list-style: none; margin: 0; padding: 0; }
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+li:nth-child(odd) { background: var(--stripe); }
+
+.status-over { color: var(--alert); font-weight: 600; }
+.status-within { color: var(--accent); font-weight: 600; }
+.status-none { color: var(--ink-light); }
+
+/* Forms */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 340px;
+}
+
+input {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 15px;
+  padding: 11px 12px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  color: var(--ink);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+button {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 11px;
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+}
+
+button:hover { background: var(--accent); }
+
+form a {
+  color: var(--ink-light);
+  font-size: 13px;
+  text-decoration: underline;
+}
